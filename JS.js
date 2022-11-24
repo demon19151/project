@@ -22,33 +22,33 @@ let personalMovieDB = {
 
 
 
-//     function rememberMyFilms(){
-//         for (let i = 0 ; i < 2; i++) {
-//             const a = prompt("Один из последних просмотренных фильмов?", ''),
-//             b = prompt("На сколько оцените его?", '');
-//             if (a != null && b != null && a != '' && b != '' && a.length < 50 ) {
-//                 personalMovieDB.movies[a] = b;  
-//                 console.log('Done');
-//             } else {
-//                 console.log('error');
-//                 i--;
-//             }
-//         }      
-//     }
-// rememberMyFilms();
+    function rememberMyFilms(){
+        for (let i = 0 ; i < 2; i++) {
+            const a = prompt("Один из последних просмотренных фильмов?", '').trim(),
+            b = prompt("На сколько оцените его?", '');
+            if (a != null && b != null && a != '' && b != '' && a.length < 50 ) {
+                personalMovieDB.movies[a] = b;  
+                console.log('Done');
+            } else {
+                console.log('error');
+                i--;
+            }
+        }      
+    }
+rememberMyFilms();
 
-// function detectPersonalLevel() {
-//     if (personalMovieDB.count < 10){
-//         console.log("Неплохо");
-//     } else if (personalMovieDB.count >= 10 && personalMovieDB.count < 30)   {
-//         console.log("Хорошо");
-//     }else if(personalMovieDB.count >= 30) {
-//         console.log("Хороfdsfsdfшо");
-//     }
+function detectPersonalLevel() {
+    if (personalMovieDB.count < 10){
+        console.log("Неплохо");
+    } else if (personalMovieDB.count >= 10 && personalMovieDB.count < 30)   {
+        console.log("Хорошо");
+    }else if(personalMovieDB.count >= 30) {
+        console.log("Хороfdsfsdfшо");
+    }
     
-// }
+}
 
-// detectPersonalLevel();
+detectPersonalLevel();
 
 function showMyDB(hidden) {
     if(!hidden) {
@@ -67,7 +67,7 @@ function showMyDB(hidden) {
 function favGanres() {
     for(let i = 1; i <= 3; i++) {
         const genre = prompt(`Ваш любимый жанр под номером ${i}`);
-        personalMovieDB.genres[3] = genre;
+        personalMovieDB.genres[i - 1] = genre;
     }
 }
 favGanres();
